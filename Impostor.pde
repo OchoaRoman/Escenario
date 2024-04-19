@@ -2,27 +2,22 @@ class Impostor {
   private PVector posicion;
   private PImage imagen;
   private PVector velocidad;
-  private int tamano;
-  
+  private int tamaño;
   public Impostor() {
     imagen = loadImage("impostor.png");
-    tamano = 50; // Ajusta el tamaño del impostor según tus necesidades
-    posicion = new PVector(0, height/2); // Comienza desde la izquierda
-    velocidad = new PVector(3, 0); // Velocidad inicial hacia la derecha
+    tamaño = 75;
+    posicion = new PVector(0, height/2);
+    velocidad = new PVector(3, 0);
   }
   
   public void dibujar() {
     imageMode(CENTER);
-    image(imagen, posicion.x, posicion.y, tamano, tamano);
+    image(imagen, posicion.x, posicion.y, tamaño, tamaño);
   }
   
   public void mover() {
-    // Mueve el impostor
     posicion.add(velocidad);
-    
-    // Verifica si el impostor ha alcanzado los límites del lienzo
     if (posicion.x < 0 || posicion.x > width) {
-      // Si alcanza el borde izquierdo o derecho, invierte la dirección horizontal
       velocidad.x *= -1;
     }
   }
