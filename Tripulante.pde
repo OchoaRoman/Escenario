@@ -1,17 +1,15 @@
 class Tripulante {
   PVector posicion;
   private PImage imagen;
-  private int tamano;
-  
-  // CONSTRUCTOR 
+  private int tamaño;
   Tripulante(){
     imagen = loadImage("tripulante.png");
-    tamano = 50; // Ajusta el tamaño del tripulante según tus necesidades
-    posicion = new PVector(width/2, height/2); // Comienza en el centro del lienzo
+    tamaño = 75; 
+    posicion = new PVector(width/2, height/2); 
   }
   
   void dibujar(){
     imageMode(CENTER);
-    image(imagen, posicion.x, posicion.y, tamano, tamano);
+    image(imagen, posicion.x, posicion.y, tamaño, tamaño);
   }
 }
